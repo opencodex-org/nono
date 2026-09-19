@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Example — نظام نطاقات تجريبي ثابت وسهل الاستخدام.">
+  <title>Example — example.en</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Example home">
+        <span class="brand-mark">E</span>
+        <span>Example</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home" data-i18n="navHome">الرئيسية</a>
+        <a href="#create" data-i18n="navCreate">إنشاء نطاق</a>
+        <a href="#domains" data-i18n="navDomains">نطاقاتي</a>
+      </nav>
+      <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language">EN</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero container">
+      <div class="hero-copy">
+        <span class="eyebrow" data-i18n="eyebrow">مساحة آمنة للتجارب</span>
+        <h1 data-i18n="heroTitle">نطاقك التجريبي،<br><span>ببساطة.</span></h1>
+        <p data-i18n="heroText">أنشئ نطاقات تجريبية لمشاريعك وأفكارك خلال ثوانٍ. لا خوادم، لا تعقيد، وكل شيء محفوظ على جهازك.</p>
+        <a class="button button-primary" href="#create"><span data-i18n="startNow">ابدأ الآن</span><span aria-hidden="true">←</span></a>
+      </div>
+      <div class="domain-orbit" aria-label="example.en">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="domain-card">
+          <span class="domain-icon">✦</span>
+          <strong>example<span>.en</span></strong>
+          <small data-i18n="experimentalDomain">نطاق تجريبي</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="features container" aria-label="Features">
+      <article class="feature-card"><span class="feature-icon">⌁</span><h2 data-i18n="featureOneTitle">سريع وبسيط</h2><p data-i18n="featureOneText">أنشئ نطاقك في خطوة واحدة دون إعدادات معقدة.</p></article>
+      <article class="feature-card"><span class="feature-icon">◉</span><h2 data-i18n="featureTwoTitle">محلي وآمن</h2><p data-i18n="featureTwoText">بياناتك تبقى في متصفحك باستخدام LocalStorage.</p></article>
+      <article class="feature-card"><span class="feature-icon">⌘</span><h2 data-i18n="featureThreeTitle">جاهز للمشاركة</h2><p data-i18n="featureThreeText">انسخ أي نطاق بسهولة واستخدمه في نماذجك الأولية.</p></article>
+    </section>
+
+    <section class="workspace container" id="create">
+      <div class="section-heading"><div><span class="eyebrow" data-i18n="workspaceEyebrow">مساحة العمل</span><h2 data-i18n="workspaceTitle">أنشئ نطاقًا تجريبيًا</h2></div><span class="step-label">01 / 02</span></div>
+      <div class="workspace-grid">
+        <form class="create-card" id="domainForm" novalidate>
+          <label for="domainName" data-i18n="nameLabel">اسم النطاق</label>
+          <div class="input-group"><input id="domainName" name="domainName" type="text" placeholder="my-project" maxlength="30" autocomplete="off" data-i18n-placeholder="namePlaceholder"><span>.example.en</span></div>
+          <p class="hint" data-i18n="nameHint">استخدم الأحرف الإنجليزية الصغيرة والأرقام والشرطة فقط.</p>
+          <p class="form-message" id="formMessage" role="alert"></p>
+          <button class="button button-dark" type="submit"><span data-i18n="createButton">إنشاء النطاق</span><span aria-hidden="true">↗</span></button>
+        </form>
+        <div class="preview-card"><div class="preview-top"><span data-i18n="livePreview">معاينة مباشرة</span><span class="live-dot"></span></div><div class="preview-domain" id="previewDomain">my-project<span>.example.en</span></div><p data-i18n="previewText">سيظهر نطاقك هنا قبل الحفظ.</p></div>
+      </div>
+    </section>
+
+    <section class="domains-section container" id="domains">
+      <div class="section-heading"><div><span class="eyebrow" data-i18n="domainsEyebrow">مجموعتك</span><h2 data-i18n="domainsTitle">النطاقات التجريبية</h2></div><span class="count-badge" id="domainCount">0</span></div>
+      <div class="domain-list" id="domainList"><div class="empty-state" id="emptyState"><span>◌</span><p data-i18n="emptyState">لم تنشئ أي نطاق بعد. ابدأ بتجربة اسم جديد.</p></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><span>Example <span class="muted">· example.en</span></span><span data-i18n="footerText">مشروع تجريبي ثابت — لا يتم إنشاء نطاقات حقيقية.</span></div></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
