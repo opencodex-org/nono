@@ -1,78 +1,43 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Example — نظام نطاقات تجريبي ثابت وسهل الاستخدام.">
-  <title>Example — example.en</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create and manage experimental .en domain names with Example.en.">
+  <meta property="og:title" content="Example.en — Experimental Domain Platform">
+  <meta property="og:description" content="Create and manage experimental .en domain names with Example.en.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://opencodex-org.github.io/nono/">
+  <meta name="theme-color" content="#5b5cf0">
+  <title>Example.en — Experimental Domain Platform</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem('example-theme') || 'light';</script>
 </head>
 <body>
   <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="Example home">
-        <span class="brand-mark">E</span>
-        <span>Example</span>
-      </a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="#home" data-i18n="navHome">الرئيسية</a>
-        <a href="#create" data-i18n="navCreate">إنشاء نطاق</a>
-        <a href="#domains" data-i18n="navDomains">نطاقاتي</a>
+    <div class="container nav-bar">
+      <a class="brand" href="#home" aria-label="Example.en home"><img src="assets/logo.svg" alt=""><span>Example<span class="brand-dot">.en</span></span></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#home" data-i18n="home">Home</a><a href="#domains" data-i18n="domains">Domains</a><a href="#about" data-i18n="about">About</a>
       </nav>
-      <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language">EN</button>
+      <div class="nav-actions"><a class="button button-small button-primary" href="#create" data-i18n="createDomain">Create Domain</a><button class="icon-button" id="themeToggle" type="button" aria-label="Dark Mode">☾</button><button class="language-button" id="languageToggle" type="button">AR</button></div>
     </div>
   </header>
 
-  <main id="home">
-    <section class="hero container">
-      <div class="hero-copy">
-        <span class="eyebrow" data-i18n="eyebrow">مساحة آمنة للتجارب</span>
-        <h1 data-i18n="heroTitle">نطاقك التجريبي،<br><span>ببساطة.</span></h1>
-        <p data-i18n="heroText">أنشئ نطاقات تجريبية لمشاريعك وأفكارك خلال ثوانٍ. لا خوادم، لا تعقيد، وكل شيء محفوظ على جهازك.</p>
-        <a class="button button-primary" href="#create"><span data-i18n="startNow">ابدأ الآن</span><span aria-hidden="true">←</span></a>
-      </div>
-      <div class="domain-orbit" aria-label="example.en">
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-        <div class="domain-card">
-          <span class="domain-icon">✦</span>
-          <strong>example<span>.en</span></strong>
-          <small data-i18n="experimentalDomain">نطاق تجريبي</small>
-        </div>
-      </div>
-    </section>
+  <main>
+    <section class="hero" id="home"><div class="container hero-grid"><div class="hero-copy"><p class="kicker" data-i18n="kicker">EXPERIMENTAL DOMAIN PLATFORM</p><h1 data-i18n="heroTitle">Your domain.<br><em>Your identity.</em></h1><p class="hero-text" data-i18n="heroText">Create and manage your own .en domain names in one simple place.</p><a class="text-link" href="#about"><span data-i18n="learnMore">Learn more</span> <span aria-hidden="true">↗</span></a></div><div class="hero-panel"><div class="panel-glow"></div><div class="search-card"><label for="searchInput" data-i18n="searchLabel">Search your .en domain</label><div class="search-row"><input id="searchInput" type="text" maxlength="63" autocomplete="off" placeholder="Search your .en domain" data-i18n-placeholder="searchPlaceholder"><button class="button button-primary" id="searchButton" type="button" data-i18n="search">Search</button></div><div class="search-result" id="searchResult" aria-live="polite"><span class="result-hint" data-i18n="searchHint">Find out if your idea is available.</span></div></div><div class="floating-domain domain-a">hello<span>.en</span></div><div class="floating-domain domain-b">test<span>.en</span></div></div></div></section>
 
-    <section class="features container" aria-label="Features">
-      <article class="feature-card"><span class="feature-icon">⌁</span><h2 data-i18n="featureOneTitle">سريع وبسيط</h2><p data-i18n="featureOneText">أنشئ نطاقك في خطوة واحدة دون إعدادات معقدة.</p></article>
-      <article class="feature-card"><span class="feature-icon">◉</span><h2 data-i18n="featureTwoTitle">محلي وآمن</h2><p data-i18n="featureTwoText">بياناتك تبقى في متصفحك باستخدام LocalStorage.</p></article>
-      <article class="feature-card"><span class="feature-icon">⌘</span><h2 data-i18n="featureThreeTitle">جاهز للمشاركة</h2><p data-i18n="featureThreeText">انسخ أي نطاق بسهولة واستخدمه في نماذجك الأولية.</p></article>
-    </section>
+    <section class="trust-strip"><div class="container trust-content"><span data-i18n="builtFor">BUILT FOR EXPERIMENTATION</span><span class="trust-line"></span><span data-i18n="localFirst">Local-first · Private · Static</span></div></section>
 
-    <section class="workspace container" id="create">
-      <div class="section-heading"><div><span class="eyebrow" data-i18n="workspaceEyebrow">مساحة العمل</span><h2 data-i18n="workspaceTitle">أنشئ نطاقًا تجريبيًا</h2></div><span class="step-label">01 / 02</span></div>
-      <div class="workspace-grid">
-        <form class="create-card" id="domainForm" novalidate>
-          <label for="domainName" data-i18n="nameLabel">اسم النطاق</label>
-          <div class="input-group"><input id="domainName" name="domainName" type="text" placeholder="my-project" maxlength="30" autocomplete="off" data-i18n-placeholder="namePlaceholder"><span>.example.en</span></div>
-          <p class="hint" data-i18n="nameHint">استخدم الأحرف الإنجليزية الصغيرة والأرقام والشرطة فقط.</p>
-          <p class="form-message" id="formMessage" role="alert"></p>
-          <button class="button button-dark" type="submit"><span data-i18n="createButton">إنشاء النطاق</span><span aria-hidden="true">↗</span></button>
-        </form>
-        <div class="preview-card"><div class="preview-top"><span data-i18n="livePreview">معاينة مباشرة</span><span class="live-dot"></span></div><div class="preview-domain" id="previewDomain">my-project<span>.example.en</span></div><p data-i18n="previewText">سيظهر نطاقك هنا قبل الحفظ.</p></div>
-      </div>
-    </section>
+    <section class="section" id="create"><div class="container"><div class="section-heading"><div><p class="kicker" data-i18n="createKicker">GET STARTED</p><h2 data-i18n="createTitle">Create your .en domain</h2></div><p data-i18n="createDescription">Give your next idea a home.</p></div><form class="create-form" id="createForm" novalidate><label class="sr-only" for="createInput" data-i18n="enterName">Enter domain name</label><div class="domain-input"><input id="createInput" type="text" maxlength="63" autocomplete="off" placeholder="mywebsite" data-i18n-placeholder="namePlaceholder"><span>.en</span></div><button class="button button-primary" type="submit" data-i18n="create">Create</button></form><p class="form-error" id="formError" role="alert"></p></div></section>
 
-    <section class="domains-section container" id="domains">
-      <div class="section-heading"><div><span class="eyebrow" data-i18n="domainsEyebrow">مجموعتك</span><h2 data-i18n="domainsTitle">النطاقات التجريبية</h2></div><span class="count-badge" id="domainCount">0</span></div>
-      <div class="domain-list" id="domainList"><div class="empty-state" id="emptyState"><span>◌</span><p data-i18n="emptyState">لم تنشئ أي نطاق بعد. ابدأ بتجربة اسم جديد.</p></div></div>
-    </section>
+    <section class="section dashboard-section" id="domains"><div class="container"><div class="section-heading"><div><p class="kicker" data-i18n="dashboardKicker">YOUR WORKSPACE</p><h2 data-i18n="dashboardTitle">Domain dashboard</h2></div><span class="count-pill" id="domainCount">0 domains</span></div><div class="table-wrap"><table><thead><tr><th data-i18n="domainColumn">Domain</th><th data-i18n="statusColumn">Status</th><th data-i18n="createdColumn">Created</th><th class="actions-heading" data-i18n="actionsColumn">Actions</th></tr></thead><tbody id="domainTable"><tr class="empty-row"><td colspan="4" data-i18n="emptyDomains">Your created domains will appear here.</td></tr></tbody></table></div></div></section>
+
+    <section class="section about-section" id="about"><div class="container about-card"><div><p class="kicker" data-i18n="aboutKicker">ABOUT THE PROJECT</p><h2 data-i18n="aboutTitle">About Example.en</h2></div><div class="about-copy"><p data-i18n="aboutText">Example.en is a demonstration platform for managing experimental .en domain names.</p><p class="notice" data-i18n="aboutNotice">This is a local demo. It does not register a real TLD or publish DNS records on the global internet.</p></div></div></section>
   </main>
-
-  <footer class="site-footer"><div class="container"><span>Example <span class="muted">· example.en</span></span><span data-i18n="footerText">مشروع تجريبي ثابت — لا يتم إنشاء نطاقات حقيقية.</span></div></footer>
-  <div class="toast" id="toast" role="status"></div>
+  <footer class="site-footer"><div class="container footer-inner"><span>© <span id="year"></span> Example.en</span><span data-i18n="footerNote">An experimental domain system — not a real public TLD.</span></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="script.js"></script>
 </body>
 </html>
