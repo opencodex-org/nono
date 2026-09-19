@@ -29,13 +29,17 @@ Then visit <http://localhost:8000>.
 
 ## Deploy to GitHub Pages
 
-1. Push the repository to GitHub.
-2. Open **Settings → Pages**.
-3. Select **Deploy from a branch**.
-4. Select `main` and `/ (root)`.
-5. Save the settings and wait for the Pages deployment.
+The site is configured to be served as a project site from:
 
-The site is entirely static and GitHub Pages compatible. Since data is stored in LocalStorage, each browser has its own private list; domains are not shared between users or devices.
+- Branch: `main`
+- Folder: `/ (root)`
+- URL: <https://opencodex-org.github.io/nono/>
+
+To enable or verify it, open **Settings → Pages**, select **Deploy from a branch**, choose `main` and `/ (root)`, then save. Do not configure a custom domain: `example.en` is only the fictional name displayed inside the application.
+
+All links to project assets use relative paths (`style.css`, `script.js`, and `assets/logo.svg`), so they work under the `/nono/` project-site path as well as when opening `index.html` locally. The repository must not contain a populated `CNAME` file.
+
+Since data is stored in LocalStorage, each browser has its own private list; domains are not shared between users or devices.
 
 ## How to use
 
